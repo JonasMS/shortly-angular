@@ -16,6 +16,8 @@ describe('LinksController', function () {
 
     var $controller = $injector.get('$controller');
 
+    console.log('conroller: ', $controller);
+
     createController = function () {
       return $controller('LinksController', {
         $scope: $scope,
