@@ -2,8 +2,9 @@
   <div class="creator">
     <form>
       <input ng-model="urlInput">
-      <button ng-click="addLink(urlInput); urlInput='';">Submit</button>
+      <button ng-click="checkLink(urlInput); urlInput='';">Submit</button>
     </form>
+    <div class="error" ng-show="error">Invalid Url</div>
   </div>
 </div>
 

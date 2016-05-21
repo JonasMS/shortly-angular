@@ -4,7 +4,10 @@
 angular.module('shortly.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
-  $scope.user = {};
+  $scope.user = {
+    username: '',
+    password: ''
+  };
 
   $scope.signin = function () {
     Auth.signin($scope.user)
@@ -26,5 +29,12 @@ angular.module('shortly.auth', [])
       .catch(function (error) {
         console.error(error);
       });
+  };
+
+  $scope.error = false;
+
+  $scope.signingAuth = function(fn) {
+    ($scope.user.username.length < 1 || $scope.user.password.length < 1) ? $scope.error = true :
+    $scope.error = false && fn();
   };
 });
