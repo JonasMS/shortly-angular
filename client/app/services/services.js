@@ -4,6 +4,7 @@ angular.module('shortly.services', [])
   // Your code here
   return {
 
+    //TODO: funky workaround?
     getAll: function() {
       return $http({
         method: 'GET',
