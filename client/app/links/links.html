@@ -1,3 +1,13 @@
-<div id='container'>
-  <!-- Your html here -->
+<div id='container' ng-controller="LinksController">
+
+  <div class="link" ng-repeat="link in data.links">
+    <a href={{link.url}}>
+      <!-- <div> {{link}} </div> -->
+      <div class="title"> {{link.title}} </div>
+      <div class="info"> {{link.url}} </div>
+      <div class="visits"> {{link.visits}} </div>
+      <a href="{{link.baseUrl}}/{{link.code}}"> {{link.baseUrl}}/{{link.code}} </a>
+    <!-- </a> -->
+  </div>
+
 </div>
